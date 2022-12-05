@@ -127,13 +127,16 @@ class Game {
         this.points.o = 0;
         this.points.x = 0;
 
-        const turnInfo = document.querySelector('.turn-o');
+        const turnO = document.querySelector('.turn-o');
+        const turnX = document.querySelector('.turn-x');
         const playerO = document.querySelector('#player-o');
         const playerX = document.querySelector('#player-x');
         this.currentPlayer = this.playerOSign;
-        turnInfo.style.display = 'block';
+        turnO.style.display = 'block';
+        turnX.style.display = 'none';
         playerO.innerHTML = this.points.o;
         playerX.innerHTML = this.points.x;
+        this.currentPlayer = this.playerOSign;
     }
 }
 
