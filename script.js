@@ -77,8 +77,21 @@ class Game {
 
                 this.addPoints();
                 this.showPopup();
-            } 
+            }
         });
+
+        let emptySquares = 0;
+
+        this.allSquares.forEach(el => {
+            if(el.innerHTML != '') emptySquares++;
+        });
+
+        if(emptySquares == 9) {
+            this.showPopup();
+
+            const winner = this.popup.querySelector('.winner');
+            winner.innerHTML = 'Remis';
+        }
     }
 
     addPoints = () => {
